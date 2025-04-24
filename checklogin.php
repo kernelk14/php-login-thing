@@ -7,7 +7,6 @@
 	$pass = "";
 	$db = "test_db";
 
-
 	$conn = new mysqli($host, $user, $pass, $db);
 
 	$username = $conn->escape_string($_POST['username']);
@@ -24,12 +23,6 @@
 
 	$fetch_uname = "";
 	$fetch_pass = "";
-
-	// echo "<script>console.log($exists)</script>";
-
-	// if ($exists == 0) {
-	// 	echo "<script>console.log('Register First')</script>";
-	// }
 
 	if ($exists > 0) {
 		while ($row = $exists->fetch_assoc()) {
