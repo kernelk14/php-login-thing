@@ -1,8 +1,4 @@
 <?php
-	
-	function js($js) {
-		echo "<script>$js</script>";
-	}
 
 	session_start();
 
@@ -28,6 +24,12 @@
 
 	$fetch_uname = "";
 	$fetch_pass = "";
+
+	// echo "<script>console.log($exists)</script>";
+
+	// if ($exists == 0) {
+	// 	echo "<script>console.log('Register First')</script>";
+	// }
 
 	if ($exists > 0) {
 		while ($row = $exists->fetch_assoc()) {

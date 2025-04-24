@@ -5,7 +5,6 @@
 	<body>
 		<?php
 			session_start();
-			
 			if (isset($_SESSION['test_db'])) {
 				$uname = $_SESSION['test_db'];
 				echo "<h2>Welcome user $uname!</h2>";
