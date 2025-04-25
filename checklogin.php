@@ -24,7 +24,7 @@
 	$fetch_uname = "";
 	$fetch_pass = "";
 
-	if ($exists > 0) {
+	if ($exists && mysqli_num_rows($exists)) {
 		while ($row = $exists->fetch_assoc()) {
 
 			$fetch_uname = $row['uname'];
