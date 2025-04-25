@@ -1,4 +1,7 @@
 <?php
+    
+    include 'functions.php';
+
     $host = "localhost";
     $user = "root";
     $pass = "";
@@ -8,7 +11,7 @@
     if ($conn->connect_error) {
         die("Error connecting to database.");
     } else {
-        echo "<script>console.log('Database connected')</script>";
+        console_log('Database connected');
     }
 
     $query = "CREATE TABLE IF NOT EXISTS test_db.users (id INT(11) AUTO_INCREMENT PRIMARY KEY, uname VARCHAR(30) NOT NULL, pass VARCHAR(80) NOT NULL)";
@@ -16,7 +19,7 @@
     $result = $conn->query($query);
 
     if ($result) {
-        echo "<script>console.log('Table created.')</script>";
+        console_log('Table created.');
     }
     
 ?>
@@ -33,8 +36,8 @@
         <main class="container">
             <h2> Log In </h2>
             <form action="checklogin.php" method="POST">
-                <p> Enter Username <input type="text" name="username" required /></p>
-                <p> Enter Password <input type="password" name="password" required /></p>
+                <p> Enter Username <input type="text" name="username" required autocomplete="off" /></p>
+                <p> Enter Password <input type="password" name="password" required autocomplete="off" /></p>
                 <input type="submit" value="Login" />
             </form>
             <p> Or you can <a href="register.php">register</a> today.</p>

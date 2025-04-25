@@ -1,5 +1,7 @@
 <?php
 
+	include 'functions.php';
+
 	session_start();
 
 	$host = "localhost";
@@ -15,7 +17,7 @@
 	if ($conn->connect_error) {
 		echo $conn->connect_error;
 	} else {
-		echo "<script>console.log('Database connected successfully.')</script>";
+		console_log('Database connected successfully.');
 	}
 
 	$query = "SELECT * FROM users WHERE uname='$username'";
@@ -36,12 +38,12 @@
 					header("location: home.php");
 				}
 			} else {
-				echo "<script>alert('Incorrect Password!')</script>";
-				echo "<script>window.location.assign('index.php')</script>";
+				alert('Incorrect Password!');
+				assign('index.php');
 			}
 		}
 	} else {
-		echo "<script>alert('Incorrect Username!')</script>";
-		echo "<script>window.location.assign('index.php')</script>";
+		alert('Incorrect Username!');
+		assign('index.php');
 	}
 ?>
