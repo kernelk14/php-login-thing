@@ -19,4 +19,9 @@
 	function console_log($msg) {
 		js("console.log('$msg')");
 	}
+
+	function printCard($content) {
+		echo "<li><h5>$content</h5></li>";
+	}
+
 ?>
