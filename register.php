@@ -54,6 +54,15 @@
 				$result = $conn->query($query);
 				if ($result) {
 					console_log('User registered.');
+					$query = "CREATE TABLE IF NOT EXISTS todo_$uname (id INT(11) AUTO_INCREMENT PRIMARY KEY, task VARCHAR(800) NOT NULL)";
+
+					$result = $conn->query($query);
+
+					if ($result) {
+						console_log("Table Created.");
+					} else {
+						die("Could not create table: " . $conn->connect_error);
+					}
 					alert('User now registered! Login to your existing user.');
 					assign('index.php');
 					// header("location: index.php");
