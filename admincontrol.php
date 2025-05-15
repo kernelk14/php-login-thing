@@ -1,6 +1,5 @@
 <?php
 	include 'functions.php';
-
 	$host = "localhost";
 	$user = "root";
 	$pass = "";
@@ -39,6 +38,9 @@
 						if ($result) {
 							while ($row = $result->fetch_assoc()) {
 								array_push($users, $row['uname']);
+								if (strcmp($row['uname'], "cct") == 0) {
+									continue;
+								}
 								echo "<option value='" . $row['uname'] . "'>" . $row['uname'] . "</option>";
 							}
 						}

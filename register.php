@@ -54,9 +54,19 @@
 				$result = $conn->query($query);
 				if ($result) {
 					console_log('User registered.');
-					$query = "CREATE TABLE IF NOT EXISTS todo_$uname (id INT(11) AUTO_INCREMENT PRIMARY KEY, task VARCHAR(800) NOT NULL)";
+					$query1 = "CREATE TABLE IF NOT EXISTS todo_$regName (id INT(11) AUTO_INCREMENT PRIMARY KEY, task VARCHAR(800) NOT NULL)";
 
-					$result = $conn->query($query);
+					$result = $conn->query($query1);
+
+					if ($result) {
+						console_log("Table Created.");
+					} else {
+						die("Could not create table: " . $conn->connect_error);
+					}
+
+					$query2 = "CREATE TABLE IF NOT EXISTS done_$regName (id INT(11) AUTO_INCREMENT PRIMARY KEY, task VARCHAR(800) NOT NULL)";
+
+					$result = $conn->query($query2);
 
 					if ($result) {
 						console_log("Table Created.");

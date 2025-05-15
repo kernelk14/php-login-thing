@@ -13,7 +13,7 @@
 	}
 
 	function assign($loc) {
-		js("window.location.assign('$loc')");
+		js("window.location.assign($loc)");
 	}
 
 	function console_log($msg) {
